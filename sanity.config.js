@@ -18,7 +18,7 @@ const singletonActions = new Set(["publish", "discardChanges", "restore"]);
 const singletonTypes = new Set(["websites-content"]);
 
 export default defineConfig({
-  name: "LinePhoto",
+  name: "Podlasiak",
   basePath: "/studio",
   projectId,
   dataset, // Add and edit the content schema in the './sanity/schema' folder
@@ -31,7 +31,7 @@ export default defineConfig({
     deskTool({
       structure: (S) =>
         S.list()
-          .title("Podlasiak")
+          .title("Konfiguracja")
           .items([
             // Our singleton type has a list item with a custom child
             // S.documentTypeListItem('index-tiles').title('Tiles'),
@@ -44,15 +44,7 @@ export default defineConfig({
                 .documentId("navbar")
                 .title("Menu główne"),
             ),
-            S.listItem().title("Menu krajów").id("countriesBar").child(
-              // Instead of rendering a list of documents, we render a single
-              // document, specifying the `documentId` manually to ensure
-              // that we're editing the single instance of the document
-              S.document()
-                .schemaType("countriesBar")
-                .documentId("countriesBar")
-                .title("Menu krajów"),
-            ),
+            S.documentTypeListItem("countriesbar").title("Menu językowe"),
             S.listItem().title("Zdjęcie główne").id("headerimage").child(
               // Instead of rendering a list of documents, we render a single
               // document, specifying the `documentId` manually to ensure
@@ -108,7 +100,6 @@ export default defineConfig({
     I18nFields({
       ui: {
         position: "bottom",
-        selected: "background",
       },
       locales: [
         {
