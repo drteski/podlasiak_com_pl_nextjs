@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	@media (min-width: 0px) {
+		--spacing: 16px;
+	}
+	@media (min-width: 360px) {
+		--spacing: 16px;
+	}
+	@media (min-width: 768px) {
+		--spacing: 32px;
+	}
+	@media (min-width: 1024px) {
+		--spacing: 32px;
+	}
+	@media (min-width: 1280px) {
+		--spacing: 48px;
+	}
+	@media (min-width: 1440px) {
+		--spacing: 64px;
+	}
+}
+
+@font-face {
+	font-family: 'Manrope';
+	src: url('../../public/fonts/Manrope-Variable.woff2') format('woff2'),
+	url('../../public/fonts/Manrope-Variable.woff') format('woff'),
+	url('../../public/fonts/Manrope-Variable.ttf') format('truetype');
+	font-weight: 200 900;
+	font-display: swap;
+	font-style: normal;
+}
+
+@layer base {
+	html {
+		scroll-behavior: smooth;
+	}
+	
+	*::-webkit-scrollbar {
+		width: 4px;
+	}
+	
+	*::-webkit-scrollbar-track {
+		@apply bg-transparent
+	}
+	
+	*::-webkit-scrollbar-thumb {
+		@apply bg-main-bg
+	}
+	
+}
+
+@layer utilities {
+	.wrapper {
+		max-width: 1700px;
+		min-width: 320px;
+		width: 100%;
+		margin: 0 auto;
+		padding: 0 var(--spacing);
+	}
+	
+	.grid-container {
+		/**
+		 * User input values.
+		 */
+		--grid-layout-gap: calc(var(--spacing) / 2);
+		--grid-column-count: 4;
+		--grid-item--min-width: 100px;
+		
+		/**
+		 * Calculated values.
+		 */
+		--gap-count: calc(var(--grid-column-count) - 1);
+		--total-gap-width: calc(var(--gap-count) * var(--grid-layout-gap));
+		--grid-item--max-width: calc((100% - var(--total-gap-width)) / var(--grid-column-count));
+		
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(max(var(--grid-item--min-width), var(--grid-item--max-width)), 1fr));
+		grid-gap: var(--grid-layout-gap);
+	}
+	
+	.test {
+		background: url('./../../public/hero_background.jpg'), #000000;
+	}
+	
+	.overlay {
+		background-color: rgba(0, 0, 0, 0.15);
+	}
+	
+}

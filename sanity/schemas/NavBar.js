@@ -4,8 +4,9 @@ const NabBar = {
   type: "document",
   fields: [
     {
-      name: "image",
+      name: "imageLight",
       title: "Logo",
+      description: "Logo na ciemne tło",
       type: "image",
       options: {
         hotspot: true,
@@ -13,7 +14,17 @@ const NabBar = {
       },
     },
     {
-      name: "offers",
+      name: "imageDark",
+      title: "Logo",
+      description: "Logo na jasne tło",
+      type: "image",
+      options: {
+        hotspot: true,
+        metadata: ["lqip"],
+      },
+    },
+    {
+      name: "links",
       title: "Linki",
       type: "array",
       of: [
@@ -21,8 +32,8 @@ const NabBar = {
           type: "object",
           name: "offer",
           fields: [
-            { type: "string", name: "url", title: "Link" },
             { type: "i18n.string", name: "title", title: "Nazwa" },
+            { type: "string", name: "url", title: "Link" },
           ],
         },
       ],

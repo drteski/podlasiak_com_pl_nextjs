@@ -1,0 +1,25 @@
+import { config } from "@/sanity/queries/config";
+
+export const podlasiakQuery = {
+  query: `*[_type in ["navbar", "countriesbar","headerimage","bestqualities","reviews","aboutus","stores","footercontact","footerimage"]][0]{
+  "navbar":*[_type == "navbar"][0]{
+    ...,
+  imageDark{..., asset->},
+  imageLight{..., asset->}
+  },
+    "countriesbar":*[_type == "countriesbar"]{
+    ...,
+    flag{..., asset->}
+    },
+    "headerimage":*[_type == "headerimage"][0]{
+    image{..., asset->}
+    },
+    "bestqualities":*[_type == "bestqualities"][0],
+    "reviews":*[_type == "reviews"][0],
+    "aboutus":*[_type == "aboutus"][0],
+    "stores":*[_type == "stores"],
+    "footercontact":*[_type == "footercontact"][0],
+    "footerimage":*[_type == "footerimage"][0]
+}`,
+  config,
+};

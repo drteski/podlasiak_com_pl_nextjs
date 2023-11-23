@@ -73,15 +73,7 @@ export default defineConfig({
                 .documentId("aboutus")
                 .title("O nas"),
             ),
-            S.listItem().title("Sklepy").id("stores").child(
-              // Instead of rendering a list of documents, we render a single
-              // document, specifying the `documentId` manually to ensure
-              // that we're editing the single instance of the document
-              S.document()
-                .schemaType("stores")
-                .documentId("stores")
-                .title("Sklepy"),
-            ),
+            S.documentTypeListItem("stores").title("Sklepy"),
             S.documentTypeListItem("footercontact").title("Dane Kontaktowe"), // S.documentTypeListItem("Category").title("Kategoria"), // Regular document types
             S.listItem().title("Zdjęcie stopka").id("footerimage").child(
               // Instead of rendering a list of documents, we render a single
@@ -109,8 +101,8 @@ export default defineConfig({
           default: true,
         },
         {
-          code: "uk",
-          label: "UK",
+          code: "en",
+          label: "EN",
           title: "Anglia",
         },
         {
