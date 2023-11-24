@@ -7,19 +7,19 @@
 		--spacing: 16px;
 	}
 	@media (min-width: 360px) {
-		--spacing: 16px;
+		--spacing: 32px;
 	}
 	@media (min-width: 768px) {
 		--spacing: 32px;
 	}
 	@media (min-width: 1024px) {
-		--spacing: 32px;
-	}
-	@media (min-width: 1280px) {
 		--spacing: 48px;
 	}
-	@media (min-width: 1440px) {
+	@media (min-width: 1280px) {
 		--spacing: 64px;
+	}
+	@media (min-width: 1440px) {
+		--spacing: 96px;
 	}
 }
 
@@ -81,12 +81,32 @@
 		grid-gap: var(--grid-layout-gap);
 	}
 	
-	.test {
-		background: url('./../../public/hero_background.jpg'), #000000;
+}
+
+@keyframes glow {
+	0% {
+		fill: rgb(98, 179, 133);
 	}
-	
-	.overlay {
-		background-color: rgba(0, 0, 0, 0.15);
+	50% {
+		fill: #039341;
 	}
-	
+	100% {
+		fill: rgb(98, 179, 133);
+	}
+}
+
+.eu1 {
+	fill: #cecece;
+}
+
+.eu2 {
+	fill: #039341;
+}
+
+.eu3 {
+	fill: #ffffff;
+}
+
+.eu4 {
+	animation: glow 4s infinite;
 }

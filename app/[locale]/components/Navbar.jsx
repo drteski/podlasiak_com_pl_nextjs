@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 const Navbar = ({ menuItems, locale }) => {
-  console.log(menuItems);
   return (
     <div className="flex items-center">
       {menuItems.map((item) => (

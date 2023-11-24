@@ -1,18 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import Navbar from "@/app/[locale]/components/Header/Navbar";
-import SanityImage from "@/app/[locale]/components/sanityImage/SanityImage";
-import CountriesBar from "@/sanity/schemas/CountriesBar";
+import Navbar from "@/app/[locale]/components/Navbar";
+import SanityImage from "@/app/[locale]/components/SanityImage";
+import CountriesNavbar from "@/app/[locale]/components/CountriesNavbar";
 
-const Header = ({ headerData, locale }) => {
-  const { imageDark, imageLight, links, image, countries } = headerData;
+const Header = ({ navbar, countries, headerImage, locale }) => {
   return (
-    <header className="mx-auto my-0 h-[100dvh]">
+    <header id="hero" className="relative mx-auto my-0 h-[100dvh]">
       <div className="absolute inset-0 z-0 h-[100dvh] overflow-clip">
         <SanityImage
           className="h-[100dvh] w-full object-cover"
-          data={image.asset}
+          data={headerImage.image.asset}
         />
         <div className="absolute inset-0 z-[5] h-full w-full bg-[#0000002C]"></div>
       </div>
@@ -21,13 +20,13 @@ const Header = ({ headerData, locale }) => {
           <Link href={`/${locale}`}>
             <SanityImage
               className="w-[200px] transition hover:opacity-75"
-              data={imageLight.asset}
+              data={navbar.imageLight.asset}
             />
           </Link>
-          <Navbar locale={locale} menuItems={links} />
+          <Navbar locale={locale} menuItems={navbar.links} />
         </div>
       </nav>
-      <CountriesBar countriesData={countries} />
+      <CountriesNavbar countriesData={countries} />
     </header>
   );
 };

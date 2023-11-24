@@ -14,7 +14,13 @@ export const podlasiakQuery = {
     "headerimage":*[_type == "headerimage"][0]{
     image{..., asset->}
     },
-    "bestqualities":*[_type == "bestqualities"][0],
+    "bestqualities":*[_type == "bestqualities"][0]{
+    ...,
+    features[]{
+    ...,
+    icon{..., asset->}
+    }
+    },
     "reviews":*[_type == "reviews"][0],
     "aboutus":*[_type == "aboutus"][0],
     "stores":*[_type == "stores"],

@@ -54,7 +54,15 @@ export default defineConfig({
                 .documentId("headerimage")
                 .title("Zdjęcie główne"),
             ),
-            S.documentTypeListItem("bestqualities").title("Cechy sprzedawcy"),
+            S.listItem().title("Cechy sprzedawcy").id("bestqualities").child(
+              // Instead of rendering a list of documents, we render a single
+              // document, specifying the `documentId` manually to ensure
+              // that we're editing the single instance of the document
+              S.document()
+                .schemaType("bestqualities")
+                .documentId("bestqualities")
+                .title("Cechy sprzedawcy"),
+            ),
             S.listItem().title("Opinie klientów").id("reviews").child(
               // Instead of rendering a list of documents, we render a single
               // document, specifying the `documentId` manually to ensure

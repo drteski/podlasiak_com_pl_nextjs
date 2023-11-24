@@ -44,9 +44,10 @@ module.exports = {
       aspectRatio: {
         "2/3": "2/3",
       },
+
       gridTemplateColumns: {
-        "auto-fit": "repeat(auto-fit, minmax(288px,1fr))",
-        "auto-fill": "repeat(auto-fill, minmax(288px,1fr))",
+        "auto-fit": "repeat(auto-fit, minmax(340px,1fr))",
+        "auto-fill": "repeat(auto-fill, minmax(340px,1fr))",
       },
     },
   },
