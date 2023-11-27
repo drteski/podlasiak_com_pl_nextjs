@@ -100,6 +100,7 @@ export default defineConfig({
     I18nFields({
       ui: {
         position: "bottom",
+        type: "dropdown",
       },
       locales: [
         {

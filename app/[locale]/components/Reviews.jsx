@@ -32,7 +32,7 @@ const Reviews = ({ reviews, locale }) => {
       <h2 className="p-dynamic text-center text-5xl font-bold text-main-bg">
         {!title[`${locale}`] ? title["pl"] : title[`${locale}`]}
       </h2>
-      <div class="flex flex-wrap justify-center gap-dynamic xl:justify-between">
+      <div className="flex flex-wrap justify-center gap-dynamic xl:justify-between">
         {clients.map((client) => {
           return (
             <div key={client._key} className="max-w-[340px]">
@@ -45,8 +45,8 @@ const Reviews = ({ reviews, locale }) => {
                   </p>
                 </div>
               </div>
-              <div class="flex items-center justify-between px-4 py-2">
-                <p class="client__name">
+              <div className="flex items-center justify-between px-4 py-2">
+                <p className="client__name">
                   {!client.name[`${locale}`]
                     ? client.name["pl"]
                     : client.name[`${locale}`]}
@@ -57,19 +57,19 @@ const Reviews = ({ reviews, locale }) => {
           );
         })}
       </div>
-      <div class="flex flex-wrap items-center justify-center gap-dynamic lg:flex-nowrap lg:justify-between">
-        <div class="flex max-w-[650px] flex-col gap-6 lg:w-1/2">
+      <div className="flex flex-wrap items-center justify-center gap-dynamic lg:flex-nowrap lg:justify-between">
+        <div className="flex max-w-[650px] flex-col gap-6 lg:w-1/2">
           <SanityImage className="w-full" data={icon.asset} />
-          <div class="flex flex-wrap items-center justify-center gap-4 md:flex-nowrap md:justify-between">
-            <div class="flex flex-col items-center justify-center gap-6">
-              <h3 class="text-7xl tracking-tighter text-opineo">
+          <div className="flex flex-wrap items-center justify-center gap-4 md:flex-nowrap md:justify-between">
+            <div className="flex flex-col items-center justify-center gap-6">
+              <h3 className="text-7xl tracking-tighter text-opineo">
                 <strong className="font-black">{rating}</strong> / 5
               </h3>
-              <div class="flex items-center gap-2">
+              <div className="flex items-center gap-2">
                 <IonThumbsUpSharp className="h-8 w-8 rounded-full bg-opineo p-2 text-main-fr" />
-                <p class="percent__text">97%</p>
+                <p className="percent__text">97%</p>
               </div>
-              <p class="text-xs">
+              <p className="text-xs">
                 {!ratingDescription[`${locale}`]
                   ? ratingDescription["pl"]
                   : ratingDescription[`${locale}`]}
@@ -78,7 +78,7 @@ const Reviews = ({ reviews, locale }) => {
             <SanityImage className="" data={badge.asset} />
           </div>
         </div>
-        <p className="block max-w-[650px] text-xl leading-10 lg:w-1/2">
+        <p className="block max-w-[650px] text-xl leading-8 lg:w-1/2">
           {!description[`${locale}`]
             ? description["pl"]
             : description[`${locale}`]}

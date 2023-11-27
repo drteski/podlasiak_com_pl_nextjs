@@ -5,21 +5,27 @@
 :root {
 	@media (min-width: 0px) {
 		--spacing: 16px;
+		--padd: 32px;
 	}
 	@media (min-width: 360px) {
 		--spacing: 32px;
+		--padd: 32px;
 	}
 	@media (min-width: 768px) {
 		--spacing: 32px;
+		--padd: 32px;
 	}
 	@media (min-width: 1024px) {
 		--spacing: 48px;
+		--padd: 48px;
 	}
 	@media (min-width: 1280px) {
 		--spacing: 64px;
+		--padd: 64px;
 	}
 	@media (min-width: 1440px) {
-		--spacing: 96px;
+		--spacing: 128px;
+		--padd: 96px;
 	}
 }
 

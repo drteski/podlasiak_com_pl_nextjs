@@ -16,7 +16,6 @@ module.exports = {
       xhd: "1920px",
     },
     colors: {
-      accent: "#b7e200",
       opineo: "#8bbf42",
       primary: "#039341",
       "main-bg": "#191919",

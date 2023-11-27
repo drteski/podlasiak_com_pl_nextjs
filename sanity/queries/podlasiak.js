@@ -23,7 +23,14 @@ export const podlasiakQuery = {
     },
     "reviews":*[_type == "reviews"][0],
     "aboutus":*[_type == "aboutus"][0],
-    "stores":*[_type == "stores"],
+    "stores":*[_type == "stores"]{
+    ...,
+    storeLogo{..., asset->},
+    stores[]{
+    ...,
+    flag{..., asset->}
+    }
+    },
     "footercontact":*[_type == "footercontact"][0],
     "footerimage":*[_type == "footerimage"][0]
 }`,
