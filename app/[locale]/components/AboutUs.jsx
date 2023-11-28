@@ -4,7 +4,10 @@ import Europe from "@/app/[locale]/components/Europe";
 const AboutUs = ({ aboutUs, locale }) => {
   const { firstRow, secondRow, title, image } = aboutUs;
   return (
-    <section id="aboutus" className="relative">
+    <section
+      id="aboutus"
+      className="relative h-[1200px] overflow-clip lg:h-full"
+    >
       <div className="wrapper text-wrap relative z-[1]">
         <h2 className="p-dynamic text-center text-5xl font-bold text-main-bg">
           {!title[`${locale}`] ? title["pl"] : title[`${locale}`]}
@@ -18,7 +21,7 @@ const AboutUs = ({ aboutUs, locale }) => {
           </p>
         </div>
       </div>
-      <Europe className="absolute -right-52 top-0 z-0 block h-full opacity-30 lg:right-0 lg:opacity-100" />
+      <Europe className="absolute -right-[50vw] top-0 z-0 block h-[1200px] opacity-30 lg:right-0 lg:h-full lg:opacity-100" />
     </section>
   );
 };

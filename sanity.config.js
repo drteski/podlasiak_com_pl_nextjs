@@ -21,7 +21,7 @@ export default defineConfig({
   name: "Podlasiak",
   basePath: "/studio",
   projectId,
-  dataset, // Add and edit the content schema in the './sanity/schema' folder
+  dataset,
   schema: {
     ...schema,
     templates: (templates) =>
@@ -33,65 +33,72 @@ export default defineConfig({
         S.list()
           .title("Konfiguracja")
           .items([
-            // Our singleton type has a list item with a custom child
-            // S.documentTypeListItem('index-tiles').title('Tiles'),
-            S.listItem().title("Menu główne").id("navBar").child(
-              // Instead of rendering a list of documents, we render a single
-              // document, specifying the `documentId` manually to ensure
-              // that we're editing the single instance of the document
-              S.document()
-                .schemaType("navbar")
-                .documentId("navbar")
-                .title("Menu główne"),
-            ),
+            S.listItem()
+              .title("Menu główne")
+              .id("navBar")
+              .child(
+                S.document()
+                  .schemaType("navbar")
+                  .documentId("navbar")
+                  .title("Menu główne"),
+              ),
             S.documentTypeListItem("countriesbar").title("Menu językowe"),
-            S.listItem().title("Zdjęcie główne").id("headerimage").child(
-              // Instead of rendering a list of documents, we render a single
-              // document, specifying the `documentId` manually to ensure
-              // that we're editing the single instance of the document
-              S.document()
-                .schemaType("headerimage")
-                .documentId("headerimage")
-                .title("Zdjęcie główne"),
-            ),
-            S.listItem().title("Cechy sprzedawcy").id("bestqualities").child(
-              // Instead of rendering a list of documents, we render a single
-              // document, specifying the `documentId` manually to ensure
-              // that we're editing the single instance of the document
-              S.document()
-                .schemaType("bestqualities")
-                .documentId("bestqualities")
-                .title("Cechy sprzedawcy"),
-            ),
-            S.listItem().title("Opinie klientów").id("reviews").child(
-              // Instead of rendering a list of documents, we render a single
-              // document, specifying the `documentId` manually to ensure
-              // that we're editing the single instance of the document
-              S.document()
-                .schemaType("reviews")
-                .documentId("reviews")
-                .title("Opinie klientów"),
-            ),
-            S.listItem().title("O nas").id("aboutus").child(
-              // Instead of rendering a list of documents, we render a single
-              // document, specifying the `documentId` manually to ensure
-              // that we're editing the single instance of the document
-              S.document()
-                .schemaType("aboutus")
-                .documentId("aboutus")
-                .title("O nas"),
-            ),
+            S.listItem()
+              .title("Zdjęcie główne")
+              .id("headerimage")
+              .child(
+                S.document()
+                  .schemaType("headerimage")
+                  .documentId("headerimage")
+                  .title("Zdjęcie główne"),
+              ),
+            S.listItem()
+              .title("Cechy sprzedawcy")
+              .id("bestqualities")
+              .child(
+                S.document()
+                  .schemaType("bestqualities")
+                  .documentId("bestqualities")
+                  .title("Cechy sprzedawcy"),
+              ),
+            S.listItem()
+              .title("Opinie klientów")
+              .id("reviews")
+              .child(
+                S.document()
+                  .schemaType("reviews")
+                  .documentId("reviews")
+                  .title("Opinie klientów"),
+              ),
+            S.listItem()
+              .title("O nas")
+              .id("aboutus")
+              .child(
+                S.document()
+                  .schemaType("aboutus")
+                  .documentId("aboutus")
+                  .title("O nas"),
+              ),
             S.documentTypeListItem("stores").title("Sklepy"),
-            S.documentTypeListItem("footercontact").title("Dane Kontaktowe"), // S.documentTypeListItem("Category").title("Kategoria"), // Regular document types
-            S.listItem().title("Zdjęcie stopka").id("footerimage").child(
-              // Instead of rendering a list of documents, we render a single
-              // document, specifying the `documentId` manually to ensure
-              // that we're editing the single instance of the document
-              S.document()
-                .schemaType("footerimage")
-                .documentId("footerimage")
-                .title("Zdjęcie stopka"),
-            ),
+            S.documentTypeListItem("footercontact").title("Dane Kontaktowe"),
+            S.listItem()
+              .title("Formularz kontaktowy")
+              .id("footerform")
+              .child(
+                S.document()
+                  .schemaType("footerform")
+                  .documentId("footerform")
+                  .title("Formularz kontaktowy"),
+              ),
+            S.listItem()
+              .title("Zdjęcie stopka")
+              .id("footerimage")
+              .child(
+                S.document()
+                  .schemaType("footerimage")
+                  .documentId("footerimage")
+                  .title("Zdjęcie stopka"),
+              ),
           ]),
     }),
     visionTool({ defaultApiVersion: apiVersion }), // media(),
@@ -100,7 +107,6 @@ export default defineConfig({
     I18nFields({
       ui: {
         position: "bottom",
-        type: "dropdown",
       },
       locales: [
         {

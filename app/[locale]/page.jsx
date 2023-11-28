@@ -7,6 +7,7 @@ import Retailer from "@/app/[locale]/components/Retailer";
 import Reviews from "@/app/[locale]/components/Reviews";
 import AboutUs from "@/app/[locale]/components/AboutUs";
 import Stores from "@/app/[locale]/components/Stores";
+import Footer from "@/app/[locale]/components/Footer";
 
 export default function Home({ params: { locale } }) {
   const { isLoading, data } = useGetSanityData(podlasiakQuery);
@@ -28,6 +29,10 @@ export default function Home({ params: { locale } }) {
             <Reviews reviews={data.reviews} locale={locale} />
             <AboutUs aboutUs={data.aboutus} locale={locale} />
             <Stores stores={data.stores} locale={locale} />
+            <Footer
+              footer={{ footerimage: data.footerimage }}
+              locale={locale}
+            />
           </main>
         </>
       )}

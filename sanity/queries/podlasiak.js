@@ -32,7 +32,10 @@ export const podlasiakQuery = {
     }
     },
     "footercontact":*[_type == "footercontact"][0],
-    "footerimage":*[_type == "footerimage"][0]
+    "footerform":*[_type == "footerform"][0],
+    "footerimage":*[_type == "footerimage"][0]{
+    image{..., asset->}
+    }
 }`,
   config,
 };
