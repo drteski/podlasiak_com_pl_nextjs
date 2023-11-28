@@ -1,9 +1,10 @@
 import SanityImage from "@/app/[locale]/components/SanityImage";
+import Europe from "@/app/[locale]/components/Europe";
 
 const AboutUs = ({ aboutUs, locale }) => {
   const { firstRow, secondRow, title, image } = aboutUs;
   return (
-    <section id="aboutus" className="relative h-[100dvh]">
+    <section id="aboutus" className="relative">
       <div className="wrapper text-wrap relative z-[1]">
         <h2 className="p-dynamic text-center text-5xl font-bold text-main-bg">
           {!title[`${locale}`] ? title["pl"] : title[`${locale}`]}
@@ -17,10 +18,7 @@ const AboutUs = ({ aboutUs, locale }) => {
           </p>
         </div>
       </div>
-      <SanityImage
-        className="absolute inset-0 z-0 block h-full object-cover object-center opacity-30 lg:opacity-100"
-        data={image.asset}
-      />
+      <Europe className="absolute -right-52 top-0 z-0 block h-full opacity-30 lg:right-0 lg:opacity-100" />
     </section>
   );
 };

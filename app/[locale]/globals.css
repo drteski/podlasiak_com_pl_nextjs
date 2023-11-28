@@ -101,18 +101,16 @@
 	}
 }
 
-.eu1 {
-	fill: #cecece;
-}
-
-.eu2 {
+.euCountry {
 	fill: #039341;
+	stroke: #ffffff;
 }
 
-.eu3 {
-	fill: #ffffff;
+.nonEuCountry {
+	fill: #cecece;
+	stroke: #ffffff;
 }
 
-.eu4 {
+#pl {
 	animation: glow 4s infinite;
 }
