@@ -35,11 +35,24 @@ const FooterContact = {
                       title: "Nazwa działu",
                     },
                     {
-                      type: "string",
-                      name: "name",
-                      title: "Typ kontaktu",
+                      name: "contactTypes",
+                      title: "Cechy",
+                      type: "array",
+                      of: [
+                        {
+                          type: "object",
+                          name: "contactType",
+                          fields: [
+                            {
+                              type: "string",
+                              name: "name",
+                              title: "Typ kontaktu",
+                            },
+                            { type: "string", name: "value", title: "Kontakt" },
+                          ],
+                        },
+                      ],
                     },
-                    { type: "string", name: "value", title: "Kontakt" },
                   ],
                 },
               ],

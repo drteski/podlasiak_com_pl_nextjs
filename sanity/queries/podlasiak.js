@@ -31,7 +31,13 @@ export const podlasiakQuery = {
     flag{..., asset->}
     }
     },
-    "footercontact":*[_type == "footercontact"][0],
+    "footercontact":*[_type == "footercontact"]{
+    ...,
+    contactPlaces[]{
+    ...,
+    icon{..., asset->},
+    }
+    },
     "footerform":*[_type == "footerform"][0],
     "footerimage":*[_type == "footerimage"][0]{
     image{..., asset->}

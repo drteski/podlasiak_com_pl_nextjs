@@ -30,7 +30,11 @@ export default function Home({ params: { locale } }) {
             <AboutUs aboutUs={data.aboutus} locale={locale} />
             <Stores stores={data.stores} locale={locale} />
             <Footer
-              footer={{ footerimage: data.footerimage }}
+              footer={{
+                footerimage: data.footerimage,
+                footercontact: data.footercontact,
+                footerform: data.footerform,
+              }}
               locale={locale}
             />
           </main>
