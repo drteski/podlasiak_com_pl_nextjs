@@ -8,6 +8,7 @@ import FooterContact from "@/sanity/schemas/FooterContact";
 import BestQualities from "@/sanity/schemas/BestQualities";
 import FooterImage from "@/sanity/schemas/FooterImage";
 import Stores from "@/sanity/schemas/Stores";
+import Email from "@/sanity/schemas/Email";
 
 export const schema = {
   types: [
@@ -21,5 +22,6 @@ export const schema = {
     FooterImage,
     FooterForm,
     FooterContact,
+    Email,
   ],
 };

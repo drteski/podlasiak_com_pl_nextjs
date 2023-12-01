@@ -9,10 +9,10 @@ const Footer = ({ footer, locale }) => {
       <footer id="contact" className="relative mx-auto my-0 py-dynamic">
         <div className="absolute inset-0 -z-10 overflow-clip">
           <SanityImage
-            className="h-[100dvh] w-full object-cover object-center"
+            className="h-full object-cover object-center"
             data={footerimage.image.asset}
           />
-          <div className="absolute inset-0 z-[5] h-full w-full bg-[#0000005a]"></div>
+          <div className="absolute inset-0 z-[5] h-full w-full bg-[#0000008a]"></div>
         </div>
         <div className="wrapper flex flex-col lg:flex-row">
           <FooterContact contact={footercontact} locale={locale} />

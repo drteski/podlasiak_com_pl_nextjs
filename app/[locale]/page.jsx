@@ -11,7 +11,6 @@ import Footer from "@/app/[locale]/components/Footer";
 
 export default function Home({ params: { locale } }) {
   const { isLoading, data } = useGetSanityData(podlasiakQuery);
-  console.log(data);
   return (
     <>
       {isLoading ? (

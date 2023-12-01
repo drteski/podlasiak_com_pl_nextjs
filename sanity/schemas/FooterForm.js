@@ -49,7 +49,12 @@ const FooterForm = {
       title: "Przycisk wyślij",
       type: "i18n.string",
     },
+    {
+      name: "confirmation",
+      title: "Potwierdzenie wysłania",
+      type: "i18n.string",
+    },
   ],
 };
 
-export default FooterForm;
+export default FooterForm

@@ -28,7 +28,7 @@ const Stores = ({ stores, locale }) => {
       <div className="flex flex-col gap-10">
         {stores.map((store) => (
           <div
-            key={store._key}
+            key={store._id}
             className="flex flex-col items-center justify-center gap-10 border-b border-b-main-bg/30"
           >
             <SanityImage data={store.storeLogo} className="h-16 w-auto" />

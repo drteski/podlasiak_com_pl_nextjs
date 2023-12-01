@@ -99,11 +99,20 @@ export default defineConfig({
                   .documentId("footerimage")
                   .title("Zdjęcie stopka"),
               ),
+            S.listItem()
+              .title("Wiadomośći email")
+              .id("emailTemplate")
+              .child(
+                S.document()
+                  .schemaType("emailTemplate")
+                  .documentId("emailTemplate")
+                  .title("Wiadomośći email"),
+              ),
           ]),
     }),
-    visionTool({ defaultApiVersion: apiVersion }), // media(),
-    imageHotspotArrayPlugin(), // Vision is a tool that lets you query your content with GROQ in the studio
-    // https://www.sanity.io/docs/the-vision-plugin
+    visionTool({ defaultApiVersion: apiVersion }),
+    imageHotspotArrayPlugin(),
+
     I18nFields({
       ui: {
         position: "bottom",

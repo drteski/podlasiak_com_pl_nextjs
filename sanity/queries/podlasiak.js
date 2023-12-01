@@ -1,7 +1,8 @@
 import { config } from "@/sanity/queries/config";
 
-export const podlasiakQuery = {
-  query: `*[_type in ["navbar", "countriesbar","headerimage","bestqualities","reviews","aboutus","stores","footercontact","footerimage"]][0]{
+export const emailQuery = `*[_type == 'emailTemplate'][0]`;
+
+export const podlasiakQuery = `*[_type in ["navbar", "countriesbar","headerimage","bestqualities","reviews","aboutus","stores","footercontact","footerimage"]][0]{
   "navbar":*[_type == "navbar"][0]{
     ...,
   imageDark{..., asset->},
@@ -42,6 +43,4 @@ export const podlasiakQuery = {
     "footerimage":*[_type == "footerimage"][0]{
     image{..., asset->}
     }
-}`,
-  config,
-};
+}`;
