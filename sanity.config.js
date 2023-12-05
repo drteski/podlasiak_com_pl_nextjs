@@ -210,8 +210,8 @@ export default defineConfig({
           title: "Chorwacja",
         },
         {
-          code: "md",
-          label: "MD",
+          code: "me",
+          label: "ME",
           title: "Czarnogóra",
         },
         {
@@ -253,6 +253,16 @@ export default defineConfig({
           code: "pt",
           label: "PT",
           title: "Portugalia",
+        },
+        {
+          code: "ch",
+          label: "CH",
+          title: "Szwajcarja",
+        },
+        {
+          code: "gr",
+          label: "GR",
+          title: "Grecja",
         },
       ],
     }),

@@ -32,21 +32,24 @@ const Navbar = ({ scrolled, menuItems, locale }) => {
     <>
       <div className="relative z-20">
         <Hamburger
-          color={scrolled ? "black" : "white"}
+          color={scrolled ? "black" : active ? "black" : "white"}
+          toggled={active}
           onToggle={(status) => setActive(status)}
         />
       </div>
-
       <div
         className={`absolute z-10  right-0 p-dynamic left-0 ${
           active ? "translate-x-0" : `translate-x-full`
-        } bottom-0 -top-4 h-[100dvh] justify-end items-end flex flex-col bg-main-fr text-main-bg transition`}
+        } bottom-0 ${
+          !scrolled ? "-top-4" : "-top-2"
+        } h-[100dvh] justify-end items-end flex flex-col bg-main-fr text-main-bg transition`}
       >
         {menuItems.map((item) => (
           <Link
             className="hover:bg-main-fr/20 block text-2xl font-light rounded-sm py-5 transition"
             key={item._key}
             href={item.url}
+            onClick={() => setActive(false)}
           >
             {!item.title[`${locale}`]
               ? item.title["pl"]

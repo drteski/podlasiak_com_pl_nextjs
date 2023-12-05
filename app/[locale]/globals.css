@@ -44,6 +44,10 @@
 		scroll-behavior: smooth;
 	}
 	
+	* {
+		box-sizing: border-box;
+	}
+	
 	*::-webkit-scrollbar {
 		width: 4px;
 	}
