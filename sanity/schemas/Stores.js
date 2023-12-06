@@ -4,6 +4,7 @@ const Stores = {
   type: "document",
   fields: [
     { name: "title", title: "Nagłówek", type: "i18n.string" },
+    { name: "priority", title: "Priorytet", type: "number" },
     {
       name: "storeLogo",
       title: "Logo Sklepu",

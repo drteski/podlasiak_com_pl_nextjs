@@ -38,6 +38,69 @@ const recipientList = {
   gr: "biuras@vonioskambarys-rea.lt",
 };
 
+export const country = (lang) => {
+  switch (lang) {
+    case "pl":
+      return "Polska";
+    case "uk":
+      return "Anglia";
+    case "de":
+      return "Niemcy";
+    case "cz":
+      return "Czechy";
+    case "fr":
+      return "Francja";
+    case "lt":
+      return "Litwa";
+    case "ro":
+      return "Rumunia";
+    case "sk":
+      return "Słowacja";
+    case "hu":
+      return "Węgry";
+    case "it":
+      return "Włochy";
+    case "bg":
+      return "Bułgaria";
+    case "ua":
+      return "Ukraina";
+    case "es":
+      return "Hiszpania";
+    case "ee":
+      return "Estonia";
+    case "hr":
+      return "Chorwacja";
+    case "lv":
+      return "Łotwa";
+    case "nl":
+      return "Holandia";
+    case "me":
+      return "Czarnogóra";
+    case "rs":
+      return "Serbia";
+    case "be":
+      return "Belgia";
+    case "at":
+      return "Austria";
+    case "ie":
+      return "Irlandia";
+    case "si":
+      return "Słowenia";
+    case "fi":
+      return "Finlandia";
+    case "se":
+      return "Szwecja";
+    case "gr":
+      return "Grecja";
+    case "ch":
+      return "Szwajcaria";
+    case "pt":
+      return "Portugalia";
+    default:
+      return "Poland";
+  }
+};
+
 export async function POST(request) {
   const { name, email, subject, message, locale } = await request.json();
   const translations = await client.fetch(emailQuery);
@@ -66,7 +129,7 @@ export async function POST(request) {
       to: !recipientList[`${locale}`]
         ? recipientList["pl"]
         : recipientList[`${locale}`],
-      subject: `Wiadomość z podlasiak.com.pl - kraj - ${locale}`,
+      subject: `Wiadomość z podlasiak.com.pl - ${country(locale)}`,
       html: render(
         messageTemplate(name, email, subject, message, locale, translations),
       ),

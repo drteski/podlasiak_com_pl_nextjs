@@ -1,5 +1,6 @@
 import SanityImage from "@/app/[locale]/components/SanityImage";
 import Link from "next/link";
+import { useCallback } from "react";
 
 export function NimbusForbidden(props) {
   return (
@@ -20,13 +21,18 @@ export function NimbusForbidden(props) {
 
 const Stores = ({ stores, locale }) => {
   const title = stores[0].title;
+  const storesOrder = useCallback(() => {
+    return stores.sort((a, b) => a.priority - b.priority);
+  }, [stores]);
+  console.log(stores, storesOrder);
+
   return (
     <section id="stores" className="wrapper">
       <h2 className="p-dynamic text-center text-5xl font-bold text-main-bg">
         {!title[`${locale}`] ? title["pl"] : title[`${locale}`]}
       </h2>
       <div className="flex flex-col gap-10">
-        {stores.map((store) => (
+        {storesOrder().map((store) => (
           <div
             key={store._id}
             className="flex flex-col items-center justify-center gap-10 border-b border-b-main-bg/30"
