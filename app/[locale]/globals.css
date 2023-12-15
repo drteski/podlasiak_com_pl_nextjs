@@ -9,23 +9,23 @@
 	}
 	@media (min-width: 360px) {
 		--spacing: 32px;
-		--padd: 32px;
-	}
-	@media (min-width: 768px) {
-		--spacing: 32px;
-		--padd: 32px;
-	}
-	@media (min-width: 1024px) {
-		--spacing: 48px;
 		--padd: 48px;
 	}
-	@media (min-width: 1280px) {
+	@media (min-width: 768px) {
+		--spacing: 48px;
+		--padd: 64px;
+	}
+	@media (min-width: 1024px) {
 		--spacing: 64px;
+		--padd: 64px;
+	}
+	@media (min-width: 1280px) {
+		--spacing: 96px;
 		--padd: 64px;
 	}
 	@media (min-width: 1440px) {
 		--spacing: 128px;
-		--padd: 96px;
+		--padd: 64px;
 	}
 }
 
@@ -82,8 +82,10 @@
 		max-width: 1700px;
 		min-width: 320px;
 		width: 100%;
-		margin: 0 auto;
-		padding: 0 var(--spacing);
+		margin-left: auto;
+		margin-right: auto;
+		padding-left: var(--spacing);
+		padding-right: var(--spacing);
 	}
 	
 	.grid-container {
@@ -121,8 +123,15 @@
 }
 
 .euCountry {
+	position: relative;
+	display: block;
 	fill: #039341;
 	stroke: #ffffff;
+}
+
+.euCountry:hover {
+	transition: 0.1s;
+	fill: rgb(136, 199, 161);
 }
 
 .nonEuCountry {
@@ -132,4 +141,18 @@
 
 #pl {
 	animation: glow 4s infinite;
+}
+
+.dupa {
+	position: absolute;
+	z-index: 999;
+	display: block;
+	width: 50px;
+	height: 50px;
+	pointer-events: none;
+	background-color: red;
+}
+
+.dupa--active {
+	display: none;
 }

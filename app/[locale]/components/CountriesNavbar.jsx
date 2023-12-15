@@ -13,11 +13,7 @@ const CountriesNavbar = ({ countriesData }) => {
   return (
     <>
       <div
-        className={`absolute flex bg-main-fr/30 ${
-          size.height < 900 && size.width > 1024
-            ? "h-[75dvh] w-20 justify-start"
-            : "justify-center"
-        } bottom-dynamic-1/2 mx-dynamic-1/2 p-4 gap-4 items-center  flex-wrap rounded-md lg:gap-2 lg:p-2.5 lg:bottom-auto lg:top-1/2 lg:-translate-y-1/2 lg:right-dynamic-1/2 lg:flex-col`}
+        className={`absolute flex flex-wrap items-center justify-center gap-4 bg-main-fr/40 rounded-2xl left-0 right-0 p-4 bottom-dynamic-1/2 mx-dynamic-1/2`}
       >
         {countries().map((country) => {
           return (
@@ -27,10 +23,10 @@ const CountriesNavbar = ({ countriesData }) => {
               href={country.link}
             >
               <SanityImage
-                className="w-8 lg:w-6 transition group-hover/flag:scale-125"
+                className="w-8 lg:w-10 transition group-hover/flag:scale-125"
                 data={country.flag.asset}
               />
-              <div className="bg-main-fr text-main-bg pointer-events-none absolute -top-9 -right-1/2 lg:-top-[6px] lg:right-10 whitespace-nowrap rounded-sm px-3.5 py-1.5 text-xs opacity-0 transition group-hover/flag:opacity-100">
+              <div className="bg-main-fr text-main-bg pointer-events-none absolute -top-14 right-1/2 translate-x-1/2 whitespace-nowrap rounded-sm px-3.5 py-1.5 text-xs opacity-0 transition group-hover/flag:opacity-100">
                 {country.name}
               </div>
             </Link>

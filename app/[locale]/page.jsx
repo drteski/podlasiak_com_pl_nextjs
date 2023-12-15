@@ -19,11 +19,12 @@ export default function Home({ params: { locale } }) {
         <>
           <Header
             locale={locale}
-            headerImage={data.headerimage}
+            headerImage={data.headerimage.images}
             countries={data.countriesbar}
             navbar={data.navbar}
           />
-          <main>
+          <main className="relative">
+            <div className="dupa"></div>
             <Retailer qualities={data.bestqualities} locale={locale} />
             <Reviews reviews={data.reviews} locale={locale} />
             <AboutUs aboutUs={data.aboutus} locale={locale} />

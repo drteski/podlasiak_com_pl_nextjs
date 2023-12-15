@@ -1,33 +1,19 @@
 import SanityImage from "@/app/[locale]/components/SanityImage";
+import { SectionHeading } from "@/app/[locale]/components/subcomponents/Typography";
+import FeatureTile from "@/app/[locale]/components/subcomponents/FeatureTile";
 
 const Retailer = ({ qualities, locale }) => {
   const { title, features } = qualities;
   return (
-    <section id="features" className="wrapper">
-      <h2 className="text-main-bg p-dynamic text-center text-5xl font-bold">
-        {!title[`${locale}`] ? title["pl"] : title[`${locale}`]}
-      </h2>
-      <div className="gap-dynamic flex flex-wrap justify-center xl:justify-between">
-        {features.map((feature) => {
-          return (
-            <div
-              key={feature._key}
-              className="border-main-bg/20 flex max-w-[340px] flex-col items-center rounded-2xl border-2 p-8 text-center"
-            >
-              <SanityImage className="h-48 w-48" data={feature.icon.asset} />
-              <h4 className="text-main-bg/90 py-6 text-4xl font-bold">
-                {!feature.title[`${locale}`]
-                  ? feature.title["pl"]
-                  : feature.title[`${locale}`]}
-              </h4>
-              <p className="text-lg">
-                {!feature.descritpion[`${locale}`]
-                  ? feature.descritpion["pl"]
-                  : feature.descritpion[`${locale}`]}
-              </p>
-            </div>
-          );
-        })}
+    <section
+      id="features"
+      className="wrapper my-dynamic pb-dynamic scroll-mt-14"
+    >
+      <SectionHeading title={title} locale={locale} />
+      <div className="gap-dynamic-1/2 flex flex-wrap justify-center box-width:justify-between">
+        {features.map((feature) => (
+          <FeatureTile key={feature._key} feature={feature} locale={locale} />
+        ))}
       </div>
     </section>
   );

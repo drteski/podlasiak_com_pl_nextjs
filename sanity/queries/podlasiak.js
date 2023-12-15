@@ -13,7 +13,10 @@ export const podlasiakQuery = `*[_type in ["navbar", "countriesbar","headerimage
     flag{..., asset->}
     },
     "headerimage":*[_type == "headerimage"][0]{
-    image{..., asset->}
+    images[]{
+    ...,
+     image{..., asset->}
+    }
     },
     "bestqualities":*[_type == "bestqualities"][0]{
     ...,

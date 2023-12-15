@@ -16,7 +16,7 @@ const Navbar = ({ scrolled, menuItems, locale }) => {
               scrolled
                 ? "text-main-bg hover:bg-main-bg/20"
                 : "text-main-fr hover:bg-main-fr/20"
-            } block rounded-sm px-8 py-3 transition`}
+            } block font-light text-sm rounded-sm px-4 py-1.5 transition`}
             key={item._key}
             href={item.url}
           >

@@ -8,20 +8,12 @@ const NabBar = {
       title: "Logo",
       description: "Logo na ciemne tło",
       type: "image",
-      options: {
-        hotspot: true,
-        metadata: ["lqip"],
-      },
     },
     {
       name: "imageDark",
       title: "Logo",
       description: "Logo na jasne tło",
       type: "image",
-      options: {
-        hotspot: true,
-        metadata: ["lqip"],
-      },
     },
     {
       name: "links",

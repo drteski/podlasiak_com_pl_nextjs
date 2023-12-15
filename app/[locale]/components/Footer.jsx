@@ -6,7 +6,10 @@ const Footer = ({ footer, locale }) => {
   const { footerimage, footercontact, footerform } = footer;
   return (
     <>
-      <footer id="contact" className="relative mx-auto my-0 py-dynamic">
+      <footer
+        id="contact"
+        className="relative mx-auto my-0 py-dynamic scroll-mt-14"
+      >
         <div className="absolute inset-0 -z-10 overflow-clip">
           <SanityImage
             className="h-full object-cover object-center"

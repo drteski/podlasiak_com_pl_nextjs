@@ -1,4 +1,8 @@
 import SanityImage from "@/app/[locale]/components/SanityImage";
+import {
+  Paragraph,
+  SectionHeading,
+} from "@/app/[locale]/components/subcomponents/Typography";
 
 export function IonThumbsUpSharp(props) {
   return (
@@ -28,61 +32,68 @@ const Reviews = ({ reviews, locale }) => {
     title,
   } = reviews;
   return (
-    <section id="reviews" className="wrapper flex flex-col gap-dynamic-1/2">
-      <h2 className="p-dynamic text-center text-5xl font-bold text-main-bg">
-        {!title[`${locale}`] ? title["pl"] : title[`${locale}`]}
-      </h2>
-      <div className="flex flex-wrap justify-center gap-dynamic xl:justify-between">
-        {clients.map((client) => {
-          return (
-            <div key={client._key} className="max-w-[340px]">
-              <div className="rounded-3xl bg-opineo p-8 text-xl font-light italic text-main-fr">
-                <div className="comment">
-                  <p className="comment__text">
-                    {!client.descritpion[`${locale}`]
-                      ? client.descritpion["pl"]
-                      : client.descritpion[`${locale}`]}
+    <section
+      id="reviews"
+      className="my-dynamic-1/2 py-dynamic bg-opineo scroll-mt-14"
+    >
+      <div className="wrapper flex flex-col gap-0">
+        <SectionHeading
+          className="text-main-fr"
+          title={title}
+          locale={locale}
+        />
+        <div className="flex flex-wrap justify-center gap-dynamic mb-dynamic xl:justify-between">
+          {clients.map((client) => {
+            return (
+              <div key={client._key} className="max-w-[340px]">
+                <div className="rounded-3xl bg-main-fr/60 p-8 text-xl font-light italic text-main-bg">
+                  <div className="comment">
+                    <p className="comment__text">
+                      {!client.descritpion[`${locale}`]
+                        ? client.descritpion["pl"]
+                        : client.descritpion[`${locale}`]}
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center justify-between px-4 py-2">
+                  <p className="client__name">
+                    {!client.name[`${locale}`]
+                      ? client.name["pl"]
+                      : client.name[`${locale}`]}
                   </p>
+                  <SanityImage className="w-24" data={icon.asset} />
                 </div>
               </div>
-              <div className="flex items-center justify-between px-4 py-2">
-                <p className="client__name">
-                  {!client.name[`${locale}`]
-                    ? client.name["pl"]
-                    : client.name[`${locale}`]}
-                </p>
-                <SanityImage className="w-24" data={icon.asset} />
-              </div>
-            </div>
-          );
-        })}
-      </div>
-      <div className="flex flex-wrap items-center justify-center gap-dynamic lg:flex-nowrap lg:justify-between">
-        <div className="flex max-w-[650px] flex-col gap-6 lg:w-1/2">
-          <SanityImage className="w-full" data={icon.asset} />
-          <div className="flex flex-wrap items-center justify-center gap-4 md:flex-nowrap md:justify-between">
-            <div className="flex flex-col items-center justify-center gap-6">
-              <h3 className="text-7xl tracking-tighter text-opineo">
-                <strong className="font-black">{rating}</strong> / 5
-              </h3>
-              <div className="flex items-center gap-2">
-                <IonThumbsUpSharp className="h-8 w-8 rounded-full bg-opineo p-2 text-main-fr" />
-                <p className="percent__text">97%</p>
-              </div>
-              <p className="text-xs">
-                {!ratingDescription[`${locale}`]
-                  ? ratingDescription["pl"]
-                  : ratingDescription[`${locale}`]}
-              </p>
-            </div>
-            <SanityImage className="" data={badge.asset} />
-          </div>
+            );
+          })}
         </div>
-        <p className="block max-w-[650px] text-xl leading-8 lg:w-1/2">
-          {!description[`${locale}`]
-            ? description["pl"]
-            : description[`${locale}`]}
-        </p>
+        <div className="flex flex-wrap items-center justify-center gap-dynamic lg:flex-nowrap lg:justify-between">
+          <div className="flex max-w-[650px] flex-col gap-dynamic-1/3 lg:w-1/2">
+            <SanityImage className="w-full" data={icon.asset} />
+            <div className="flex flex-wrap items-center justify-center gap-4 md:flex-nowrap md:justify-between">
+              <div className="flex flex-col items-center justify-center gap-4">
+                <h3 className="text-7xl tracking-tighter text-main-fr">
+                  <strong className="font-black">{rating}</strong> / 5
+                </h3>
+                <div className="flex items-center gap-2">
+                  <IonThumbsUpSharp className="h-8 w-8 rounded-full bg-main-fr p-2 text-opineo" />
+                  <p className="percent__text">97%</p>
+                </div>
+                <p className="text-xs text-main-fr">
+                  {!ratingDescription[`${locale}`]
+                    ? ratingDescription["pl"]
+                    : ratingDescription[`${locale}`]}
+                </p>
+              </div>
+              <SanityImage className="" data={badge.asset} />
+            </div>
+          </div>
+          <Paragraph
+            className="text-main-fr lg:w-1/2"
+            text={description}
+            locale={locale}
+          />
+        </div>
       </div>
     </section>
   );

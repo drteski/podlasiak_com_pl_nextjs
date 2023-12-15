@@ -1,6 +1,7 @@
 import SanityImage from "@/app/[locale]/components/SanityImage";
 import Link from "next/link";
 import { useCallback } from "react";
+import { SectionHeading } from "@/app/[locale]/components/subcomponents/Typography";
 
 export function NimbusForbidden(props) {
   return (
@@ -24,13 +25,10 @@ const Stores = ({ stores, locale }) => {
   const storesOrder = useCallback(() => {
     return stores.sort((a, b) => a.priority - b.priority);
   }, [stores]);
-  console.log(stores, storesOrder);
 
   return (
-    <section id="stores" className="wrapper">
-      <h2 className="p-dynamic text-center text-5xl font-bold text-main-bg">
-        {!title[`${locale}`] ? title["pl"] : title[`${locale}`]}
-      </h2>
+    <section id="stores" className="wrapper my-dynamic pb-dynamic scroll-mt-14">
+      <SectionHeading title={title} locale={locale} />
       <div className="flex flex-col gap-10">
         {storesOrder().map((store) => (
           <div
@@ -38,7 +36,7 @@ const Stores = ({ stores, locale }) => {
             className="flex flex-col items-center justify-center gap-10 border-b border-b-main-bg/30"
           >
             <SanityImage data={store.storeLogo} className="h-16 w-auto" />
-            <div className="flex flex-wrap items-center justify-center gap-6 pb-10">
+            <div className="grid grid-cols-auto-fit-70px w-full items-center justify-center gap-6 pb-10">
               {store.stores.map((storeCountry) => (
                 <Link
                   key={storeCountry._key}

@@ -20,14 +20,25 @@ const Header = ({ navbar, countries, headerImage, locale }) => {
       if (windowHeight < 10) setScrolled(false);
     }
   };
+
   return (
     <header id="hero" className="relative mx-auto my-0 h-[100dvh]">
-      <div className="absolute inset-0 z-0 h-[100dvh] overflow-clip">
-        <SanityImage
-          className="h-[100dvh] w-full object-cover"
-          data={headerImage.image.asset}
-        />
-        <div className="absolute inset-0 z-[5] h-full w-full bg-[#0000002C]"></div>
+      <div className="absolute inset-0 z-0 h-[100dvh] ">
+        <div className="grid h-full w-full grid-cols-2 grid-rows-2">
+          {headerImage.map((image, index) => {
+            return (
+              <div
+                key={image._key}
+                className="bg-main-bg w-full h-full overflow-clip"
+              >
+                <SanityImage
+                  className="h-full object-right opacity-80 object-cover"
+                  data={image.image.asset}
+                />
+              </div>
+            );
+          })}
+        </div>
       </div>
       <nav
         className={`fixed z-20  mx-auto my-0 w-full ${
