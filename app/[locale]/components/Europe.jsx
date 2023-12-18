@@ -3,28 +3,28 @@
 import { useLayoutEffect, useRef } from "react";
 
 const Europe = (props) => {
-  useLayoutEffect(() => {
-    const block = document.querySelector(".dupa");
-    const countries = document.querySelectorAll(".euCountry");
-    let x;
-    let y;
-    window.addEventListener("mousemove", (e) => {
-      x = e.pageX;
-      y = e.pageY;
-      block.setAttribute("style", `top: ${y}px; left: ${x - 55}px`);
-    });
-    countries.forEach((country) => {
-      country.addEventListener("mouseenter", (e) => {
-        block.classList.add("dupa--active");
-        block.innerHTML = e.currentTarget.id;
-      });
-      country.addEventListener("mouseleave", (e) => {
-        block.classList.remove("dupa--active");
-      });
-    });
-    // if (!europe) return;
-    // europe.addEventListener("mousemove", handleEurope);
-  }, []);
+  // useLayoutEffect(() => {
+  //   const block = document.querySelector(".dupa");
+  //   const countries = document.querySelectorAll(".euCountry");
+  //   let x;
+  //   let y;
+  //   window.addEventListener("mousemove", (e) => {
+  //     x = e.pageX;
+  //     y = e.pageY;
+  //     block.setAttribute("style", `top: ${y}px; left: ${x - 55}px`);
+  //   });
+  //   countries.forEach((country) => {
+  //     country.addEventListener("mouseenter", (e) => {
+  //       block.classList.add("dupa--active");
+  //       block.innerHTML = e.currentTarget.id;
+  //     });
+  //     country.addEventListener("mouseleave", (e) => {
+  //       block.classList.remove("dupa--active");
+  //     });
+  //   });
+  //   // if (!europe) return;
+  //   // europe.addEventListener("mousemove", handleEurope);
+  // }, []);
 
   return (
     <svg

@@ -4,21 +4,19 @@ const HeaderImage = {
   type: "document",
   fields: [
     {
-      name: "images",
-      title: "Zdjęcia na stronie głównej",
-      description: "Przynajmniej 4 zdjęcia",
+      name: "title",
+      title: "Tytuł",
+      type: "i18n.string",
+    },
+    {
+      name: "heros",
+      title: "Zdjęcia na stronie głównej i opis",
       type: "array",
       of: [
         {
           type: "object",
-          name: "feature",
+          name: "hero",
           fields: [
-            {
-              name: "type",
-              title: "Rodzaj",
-              description: "Rodzaj zdjęcia Rea lub Tutumi",
-              type: "string",
-            },
             {
               name: "image",
               title: "Zdjęcie główne",

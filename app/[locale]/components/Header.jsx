@@ -4,11 +4,25 @@ import Link from "next/link";
 import Navbar from "@/app/[locale]/components/Navbar";
 import SanityImage from "@/app/[locale]/components/SanityImage";
 import CountriesNavbar from "@/app/[locale]/components/CountriesNavbar";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import Hero from "@/app/[locale]/components/subcomponents/Hero";
+import useDimensions from "@/hooks/useDimensions";
 
 const Header = ({ navbar, countries, headerImage, locale }) => {
-  const [scrolled, setScrolled] = useState(false);
-  useEffect(() => {
+  const countriesRef = useRef(null);
+  const navbarRef = useRef(null);
+  const countriesBar = useDimensions(countriesRef);
+  const navBar = useDimensions(navbarRef);
+  const [scrolled, setScrolled] = useState(0);
+  document.documentElement.style.setProperty(
+    "--navbar-height",
+    `${navBar.ref.height}px`,
+  );
+  document.documentElement.style.setProperty(
+    "--countriesbar-height",
+    `${countriesBar.ref.height}px`,
+  );
+  useLayoutEffect(() => {
     window.addEventListener("scroll", stickNavbar);
     return () => window.removeEventListener("scroll", stickNavbar);
   }, []);
@@ -22,46 +36,37 @@ const Header = ({ navbar, countries, headerImage, locale }) => {
   };
 
   return (
-    <header id="hero" className="relative mx-auto my-0 h-[100dvh]">
-      <div className="absolute inset-0 z-0 h-[100dvh] ">
-        <div className="grid h-full w-full grid-cols-2 grid-rows-2">
-          {headerImage.map((image, index) => {
-            return (
-              <div
-                key={image._key}
-                className="bg-main-bg w-full h-full overflow-clip"
-              >
-                <SanityImage
-                  className="h-full object-right opacity-80 object-cover"
-                  data={image.image.asset}
-                />
-              </div>
-            );
-          })}
-        </div>
-      </div>
-      <nav
-        className={`fixed z-20  mx-auto my-0 w-full ${
-          scrolled ? "py-2 bg-main-fr shadow-2xl" : "py-4 bg-transparent"
-        } transition-all`}
+    <header id="hero" className="mx-auto">
+      <div
+        className={`grid grid-rows-[var(--navbar-height)_1fr_var(--countriesbar-height)] h-[100dvh]`}
       >
-        <div className="wrapper relative flex items-center justify-between">
-          <Link href={`/${locale}`}>
-            <SanityImage
-              className={`${
-                scrolled ? "w-[140px]" : "w-[200px]"
-              } transition-all hover:opacity-75`}
-              data={scrolled ? navbar.imageDark.asset : navbar.imageLight.asset}
-            />
-          </Link>
-          <Navbar
-            scrolled={scrolled}
-            locale={locale}
-            menuItems={navbar.links}
-          />
+        <div className={`h-full`}>
+          <nav
+            ref={navbarRef}
+            className={`fixed z-20  mx-auto my-0 w-full ${
+              scrolled ? "py-2 bg-main-fr shadow-2xl" : "py-4 bg-main-fr"
+            } transition-all`}
+          >
+            <div className="wrapper relative flex items-center justify-between">
+              <Link href={`/${locale}`}>
+                <SanityImage
+                  className={`${
+                    scrolled ? "w-[140px]" : "w-[200px]"
+                  } transition-all hover:opacity-75`}
+                  data={navbar.imageDark.asset}
+                />
+              </Link>
+              <Navbar
+                scrolled={scrolled}
+                locale={locale}
+                menuItems={navbar.links}
+              />
+            </div>
+          </nav>
         </div>
-      </nav>
-      <CountriesNavbar countriesData={countries} />
+        <Hero hero={headerImage} locale={locale} />
+        <CountriesNavbar ref={countriesRef} countriesData={countries} />
+      </div>
     </header>
   );
 };

@@ -12,11 +12,7 @@ const Navbar = ({ scrolled, menuItems, locale }) => {
       <div className="flex items-center">
         {menuItems.map((item) => (
           <Link
-            className={`${
-              scrolled
-                ? "text-main-bg hover:bg-main-bg/20"
-                : "text-main-fr hover:bg-main-fr/20"
-            } block font-light text-sm rounded-sm px-4 py-1.5 transition`}
+            className={`text-main-bg hover:bg-main-bg/20 block font-light text-sm rounded-sm px-4 py-1.5 transition`}
             key={item._key}
             href={item.url}
           >
@@ -32,7 +28,7 @@ const Navbar = ({ scrolled, menuItems, locale }) => {
     <>
       <div className="relative z-20">
         <Hamburger
-          color={scrolled ? "black" : active ? "black" : "white"}
+          color={"black"}
           toggled={active}
           onToggle={(status) => setActive(status)}
         />

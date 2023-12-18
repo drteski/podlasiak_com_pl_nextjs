@@ -27,6 +27,9 @@
 		--spacing: 128px;
 		--padd: 64px;
 	}
+	
+	--navbar-height: 0;
+	--countriesbar-height: 0;
 }
 
 @font-face {
@@ -84,8 +87,8 @@
 		width: 100%;
 		margin-left: auto;
 		margin-right: auto;
-		padding-left: var(--spacing);
-		padding-right: var(--spacing);
+		padding-left: calc(var(--spacing) / 2);
+		padding-right: calc(var(--spacing) / 2);
 	}
 	
 	.grid-container {
@@ -120,6 +123,23 @@
 	100% {
 		fill: rgb(98, 179, 133);
 	}
+}
+
+@keyframes scale {
+	0% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(1.25);
+	}
+}
+
+.font-gabrito {
+	font-family: 'Gabarito', sans-serif;
+}
+
+.scale-animation {
+	animation: scale 10s infinite;
 }
 
 .euCountry {

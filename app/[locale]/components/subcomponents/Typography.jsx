@@ -11,6 +11,13 @@ export const SectionHeading = ({ title, locale, className }) => {
     </h2>
   );
 };
+export const H1 = ({ text, locale, className }) => {
+  return (
+    <h1 className={cn(`${className} py-dynamic-heading text-center`)}>
+      {!text[`${locale}`] ? text["pl"] : text[`${locale}`]}
+    </h1>
+  );
+};
 
 export const H3 = ({ text, locale }) => {
   return <></>;

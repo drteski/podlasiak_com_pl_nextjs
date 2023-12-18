@@ -19,7 +19,7 @@ export default function Home({ params: { locale } }) {
         <>
           <Header
             locale={locale}
-            headerImage={data.headerimage.images}
+            headerImage={data.headerimage}
             countries={data.countriesbar}
             navbar={data.navbar}
           />
