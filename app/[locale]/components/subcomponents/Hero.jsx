@@ -42,7 +42,7 @@ const Hero = ({ className, hero, locale }) => {
           <div className="absolute flex flex-col justify-center text-main-fr items inset-0 bg-[linear-gradient(0deg,_rgba(0,0,0,0.75)_0%,_rgba(0,212,255,0)_100%)]">
             {hero.title && (
               <H1
-                className="text-2xl opacity-80 sm:text-3xl md:text-5xl lg:text-6xl hd:text-7xl px-dynamic-1/2 font-black font-gabrito tracking-wide text-main-fr uppercase"
+                className="text-2xl opacity-80 sm:text-3xl md:text-5xl lg:text-6xl hd:text-7xl px-dynamic-1/2 font-black font-gabrito  text-main-fr uppercase"
                 text={hero.title}
                 locale={locale}
               />

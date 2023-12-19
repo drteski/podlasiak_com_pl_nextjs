@@ -9,7 +9,7 @@ export default function RootLayout({ children, params }) {
     <html lang={params.locale}>
       <head>
         <link
-          href="https://fonts.googleapis.com/css2?family=Gabarito:wght@900&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Chivo&display=swap"
           rel="stylesheet"
         />
       </head>
