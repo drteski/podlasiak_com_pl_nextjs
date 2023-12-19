@@ -1,5 +1,9 @@
 import "./globals.css";
 
+import { Chivo } from "next/font/google";
+
+const chivo = Chivo({ subsets: ["latin"] });
+
 export const metadata = {
   title: "Podlasiak",
 };
@@ -7,13 +11,7 @@ export const metadata = {
 export default function RootLayout({ children, params }) {
   return (
     <html lang={params.locale}>
-      <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Chivo&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body className="font-primary">{children}</body>
+      <body className={`font-primary ${chivo.className}`}>{children}</body>
     </html>
   );
 }
