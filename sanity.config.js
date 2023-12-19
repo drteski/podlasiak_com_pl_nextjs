@@ -79,6 +79,15 @@ export default defineConfig({
                   .documentId("aboutus")
                   .title("O nas"),
               ),
+            S.listItem()
+              .title("Sklep stacjonarny")
+              .id("localStore")
+              .child(
+                S.document()
+                  .schemaType("localStore")
+                  .documentId("localStore")
+                  .title("Sklep stacjonarny"),
+              ),
             S.documentTypeListItem("stores").title("Sklepy"),
             S.documentTypeListItem("footercontact").title("Dane Kontaktowe"),
             S.listItem()

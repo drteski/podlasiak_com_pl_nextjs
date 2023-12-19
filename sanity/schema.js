@@ -9,6 +9,7 @@ import BestQualities from "./schemas/BestQualities";
 import FooterImage from "./schemas/FooterImage";
 import Stores from "./schemas/Stores";
 import Email from "./schemas/Email";
+import LocalStore from "@/sanity/schemas/LocalStore";
 
 export const schema = {
   types: [
@@ -18,6 +19,7 @@ export const schema = {
     BestQualities,
     Reviews,
     AboutUs,
+    LocalStore,
     Stores,
     FooterImage,
     FooterForm,
