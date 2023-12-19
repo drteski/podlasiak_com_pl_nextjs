@@ -7,7 +7,10 @@ import { useLayoutEffect, useState } from "react";
 
 const Hero = ({ className, hero, locale }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const heroLength = hero?.heros.length;
+
+  const { heros, title } = hero;
+
+  const heroLength = heros?.length;
   useLayoutEffect(() => {
     const interval = setInterval(() => {
       if (currentSlide === heroLength - 1) return setCurrentSlide(0);
@@ -24,8 +27,8 @@ const Hero = ({ className, hero, locale }) => {
     >
       <div className="absolute top-0 bottom-0 left-dynamic-1/2 right-dynamic-1/2 country-width:left-6 country-width:right-6 h-full rounded-3xl overflow-clip">
         <div className="relative h-full w-full">
-          {hero.heros &&
-            hero.heros.map((heroContent, index) => {
+          {heros &&
+            heros.map((heroContent, index) => {
               return (
                 <div
                   key={heroContent._key}
@@ -41,10 +44,10 @@ const Hero = ({ className, hero, locale }) => {
               );
             })}
           <div className="absolute flex flex-col justify-center text-main-fr items inset-0 bg-[linear-gradient(0deg,_rgba(0,0,0,0.75)_0%,_rgba(0,212,255,0)_100%)]">
-            {hero.title && (
+            {title && (
               <H1
                 className="text-2xl opacity-80 sm:text-3xl md:text-5xl lg:text-6xl hd:text-7xl px-dynamic-1/2 font-normal font-gabrito  text-main-fr uppercase"
-                text={hero.title}
+                text={title}
                 locale={locale}
               />
             )}
