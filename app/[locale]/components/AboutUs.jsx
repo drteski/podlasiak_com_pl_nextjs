@@ -12,7 +12,7 @@ const AboutUs = ({ aboutUs, locale }) => {
   return (
     <section
       id="aboutus"
-      className="relative  my-dynamic pb-dynamic scroll-mt-14 h-[1200px] overflow-clip lg:h-full"
+      className="relative my-dynamic scroll-mt-14 h-[1200px] overflow-clip lg:h-full"
     >
       <div className="wrapper text-wrap relative z-[1] pointer-events-none">
         <SectionHeading title={title} locale={locale} />

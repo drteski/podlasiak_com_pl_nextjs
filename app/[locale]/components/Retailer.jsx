@@ -5,10 +5,7 @@ import FeatureTile from "@/app/[locale]/components/subcomponents/FeatureTile";
 const Retailer = ({ qualities, locale }) => {
   const { title, features } = qualities;
   return (
-    <section
-      id="features"
-      className="wrapper my-dynamic pb-dynamic scroll-mt-14"
-    >
+    <section id="features" className="wrapper my-dynamic scroll-mt-14">
       <SectionHeading title={title} locale={locale} />
       <div className="gap-dynamic-1/2 flex flex-wrap justify-center box-width:justify-between">
         {features.map((feature) => (

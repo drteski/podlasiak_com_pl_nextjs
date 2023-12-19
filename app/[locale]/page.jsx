@@ -8,6 +8,7 @@ import Reviews from "@/app/[locale]/components/Reviews";
 import AboutUs from "@/app/[locale]/components/AboutUs";
 import Stores from "@/app/[locale]/components/Stores";
 import Footer from "@/app/[locale]/components/Footer";
+import Energy from "@/app/[locale]/components/Energy";
 
 export default function Home({ params: { locale } }) {
   const { isLoading, data } = useGetSanityData(podlasiakQuery);
@@ -24,20 +25,20 @@ export default function Home({ params: { locale } }) {
             navbar={data.navbar}
           />
           <main className="relative">
-            <div className="dupa"></div>
             <Retailer qualities={data.bestqualities} locale={locale} />
             <Reviews reviews={data.reviews} locale={locale} />
             <AboutUs aboutUs={data.aboutus} locale={locale} />
             <Stores stores={data.stores} locale={locale} />
-            <Footer
-              footer={{
-                footerimage: data.footerimage,
-                footercontact: data.footercontact,
-                footerform: data.footerform,
-              }}
-              locale={locale}
-            />
+            <Energy locale={locale} />
           </main>
+          <Footer
+            footer={{
+              footerimage: data.footerimage,
+              footercontact: data.footercontact,
+              footerform: data.footerform,
+            }}
+            locale={locale}
+          />
         </>
       )}
     </>

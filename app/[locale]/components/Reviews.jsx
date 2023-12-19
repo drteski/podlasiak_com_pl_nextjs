@@ -34,7 +34,7 @@ const Reviews = ({ reviews, locale }) => {
   return (
     <section
       id="reviews"
-      className="my-dynamic-1/2 py-dynamic bg-opineo scroll-mt-14"
+      className="my-dynamic pb-dynamic bg-opineo scroll-mt-14"
     >
       <div className="wrapper flex flex-col gap-0">
         <SectionHeading

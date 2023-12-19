@@ -27,7 +27,7 @@ const Stores = ({ stores, locale }) => {
   }, [stores]);
 
   return (
-    <section id="stores" className="wrapper my-dynamic pb-dynamic scroll-mt-14">
+    <section id="stores" className="wrapper my-dynamic scroll-mt-14">
       <SectionHeading title={title} locale={locale} />
       <div className="flex flex-col gap-10">
         {storesOrder().map((store) => (
