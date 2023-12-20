@@ -1,11 +1,7 @@
 import SanityImage from "@/app/[locale]/components/SanityImage";
-import {
-  Paragraph,
-  SectionHeading,
-} from "@/app/[locale]/components/subcomponents/Typography";
+import { Paragraph } from "@/app/[locale]/components/subcomponents/Typography";
 
 const LocalStore = ({ localStore, locale }) => {
-  console.log(localStore);
   return (
     <section
       id="local"
@@ -23,11 +19,6 @@ const LocalStore = ({ localStore, locale }) => {
         </video>
       </div>
       <div className="wrapper relative z-10 flex flex-col h-full items-center justify-end pb-dynamic">
-        {/*<SectionHeading*/}
-        {/*  className="relative z-10 text-main-fr"*/}
-        {/*  title={localStore.title}*/}
-        {/*  locale={locale}*/}
-        {/*/>*/}
         <div className="bg-main-fr rounded-3xl p-dynamic-1/2 lg:p-dynamic-1/3 w-full self-start lg:w-1/2">
           <SanityImage data={localStore.logo} className="pb-dynamic-1/4" />
           <Paragraph

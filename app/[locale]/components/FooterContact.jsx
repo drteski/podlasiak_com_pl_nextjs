@@ -6,7 +6,6 @@ const FooterContact = ({ contact, locale }) => {
   if (!currentContact) {
     currentContact = contact.filter((cont) => cont.locale === "pl")[0];
   }
-
   return (
     <div className="w-full text-main-fr">
       <h3 className="mb-8 text-3xl font-bold">
@@ -15,7 +14,7 @@ const FooterContact = ({ contact, locale }) => {
           : currentContact.title[`${locale}`]}
       </h3>
       <div className="">
-        {!currentContact.contactPlaces &&
+        {currentContact.contactPlaces &&
           currentContact.contactPlaces.map((details) => (
             <div key={details._key}>
               <div className="flex items-center gap-2 text-xl font-medium text-main-fr">
@@ -23,11 +22,11 @@ const FooterContact = ({ contact, locale }) => {
                 <h4>{details.title}</h4>
               </div>
               <div>
-                {!details.contacts &&
+                {details.contacts &&
                   details.contacts.map((detail) => (
                     <div className="mb-8 ml-10 flex flex-col" key={detail._key}>
                       <h5 className="py-2 font-medium">{detail.subTitle}</h5>
-                      {!detail.contactTypes &&
+                      {detail.contactTypes &&
                         detail.contactTypes.map((type) => (
                           <span key={type._key}>
                             <strong>{type.name}: </strong>
