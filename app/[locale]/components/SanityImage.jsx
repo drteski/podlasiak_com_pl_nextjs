@@ -36,8 +36,8 @@ const SanityImage = (props) => {
       {...restProps}
       {...imageProps}
       sizes="(max-width: 1000px) 150vw, (max-width: 1920px) 1920px"
-      placeholder={!data?.metadata?.lqip ? "" : "blur"}
-      blurDataURL={!data?.metadata?.lqip ? "" : data.metadata.lqip}
+      // placeholder={!data?.metadata?.lqip ? "" : "blur"}
+      // blurDataURL={!data?.metadata?.lqip ? "" : data.metadata.lqip}
       alt={data.altText ? data.altText : ""}
     />
   );

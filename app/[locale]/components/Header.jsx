@@ -53,6 +53,8 @@ const Header = ({ navbar, countries, headerImage, locale }) => {
                   className={`${
                     scrolled ? "w-[140px]" : "w-[200px]"
                   } transition-all hover:opacity-75`}
+                  width={200}
+                  height={50}
                   data={navbar.imageDark.asset}
                 />
               </Link>

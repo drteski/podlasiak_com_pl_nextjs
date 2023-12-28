@@ -15,6 +15,11 @@ const Navbar = ({ scrolled, menuItems, locale }) => {
             className={`text-main-bg hover:bg-main-bg/20 block font-light text-sm rounded-sm px-4 py-1.5 transition`}
             key={item._key}
             href={item.url}
+            aria-label={
+              !item.title[`${locale}`]
+                ? item.title["pl"]
+                : item.title[`${locale}`]
+            }
           >
             {!item.title[`${locale}`]
               ? item.title["pl"]
@@ -45,6 +50,11 @@ const Navbar = ({ scrolled, menuItems, locale }) => {
             className="hover:bg-main-fr/20 block text-2xl font-light rounded-sm py-5 transition"
             key={item._key}
             href={item.url}
+            aria-label={
+              !item.title[`${locale}`]
+                ? item.title["pl"]
+                : item.title[`${locale}`]
+            }
             onClick={() => setActive(false)}
           >
             {!item.title[`${locale}`]
