@@ -12,7 +12,7 @@ const FeatureTile = ({ feature, locale }) => {
             : feature.title[`${locale}`]}
         </h4>
         <Paragraph
-          className="text-base text-main-fr/70"
+          className="text-base text-main-fr"
           text={feature.descritpion}
           locale={locale}
         />

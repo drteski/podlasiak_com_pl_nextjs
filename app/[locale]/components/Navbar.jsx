@@ -35,6 +35,7 @@ const Navbar = ({ scrolled, menuItems, locale }) => {
         <Hamburger
           color={"black"}
           toggled={active}
+          aria-label="Menu"
           onToggle={(status) => setActive(status)}
         />
       </div>
