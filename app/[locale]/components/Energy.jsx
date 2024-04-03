@@ -12,9 +12,9 @@ const Energy = ({ locale }) => {
           </h2>
           <p className="py-6">
             PODLASIAK ANDRZEJ CYLWIK Spółka Komandytowa realizuje Projekt
-            dofinansowany z Funduszy Europejskich Energia odnawialna w{" "}
+            dofinansowany z Funduszy Europejskich{" "}
             <strong>
-              <em>PODLASIAK ANDRZEJ CYLWIK Spółka Komandytowa</em>
+              <em>Energia odnawialna w PODLASIAK ANDRZEJ CYLWIK</em>
             </strong>
             .
           </p>
@@ -25,13 +25,13 @@ const Energy = ({ locale }) => {
           </p>
           <ul className="list-decimal<strong></strong> pl-8">
             <li>
-              Wytwarzanie do <strong>1438,04</strong> MWh energii elektrycznej
+              Wytwarzanie do <strong>1438,64</strong> MWh energii elektrycznej
               rocznie z 2 instalacji fotowoltaicznych o mocy łącznej{" "}
               <strong>1 623,01</strong> kW w okresie od 2024 r. do 2026 r.
             </li>
             <li>
               Zmniejszenie rocznej emisji CO2 do atmosfery do{" "}
-              <strong>1 167,69</strong> MgCO2 rocznie w okresie od 2024 r. do
+              <strong>1 168,18</strong> MgCO2 rocznie w okresie od 2024 r. do
               2026 r.
             </li>
             <li>
@@ -78,7 +78,7 @@ const Energy = ({ locale }) => {
           </p>
           <p>
             Wkład Funduszy Europejskich:
-            <strong>Około 30% wartości projektu</strong>
+            <strong>2 103 866,87 PLN</strong>
           </p>
           <div className="w-full flex justify-center py-3">
             <Image
