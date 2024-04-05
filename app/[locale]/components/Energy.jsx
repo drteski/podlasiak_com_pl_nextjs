@@ -15,7 +15,7 @@ const Energy = ({ locale }) => {
             dofinansowany z Funduszy Europejskich{" "}
             <strong>
               <em>Energia odnawialna w PODLASIAK ANDRZEJ CYLWIK</em>
-            </strong>
+            </strong>{" "}
             nr WND-RPPD.11.01.00-20-0050/23.
           </p>
           <p className="py-6">
