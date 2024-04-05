@@ -16,7 +16,7 @@ const Energy = ({ locale }) => {
             <strong>
               <em>Energia odnawialna w PODLASIAK ANDRZEJ CYLWIK</em>
             </strong>
-            .
+            nr WND-RPPD.11.01.00-20-0050/23.
           </p>
           <p className="py-6">
             W oparciu o zidentyfikowane wyzwania i problemy oraz cele
