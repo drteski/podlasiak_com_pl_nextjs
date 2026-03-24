@@ -254,6 +254,11 @@ export default defineConfig({
           title: "Szwecja",
         },
         {
+          code: "dk",
+          label: "DK",
+          title: "Dania",
+        },
+        {
           code: "ie",
           label: "IE",
           title: "Irlandia",

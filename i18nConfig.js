@@ -2,6 +2,7 @@ const i18nConfig = {
   locales: [
     "pl",
     "en",
+    "dk",
     "uk",
     "de",
     "ru",
