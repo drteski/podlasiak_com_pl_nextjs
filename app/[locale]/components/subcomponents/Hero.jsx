@@ -37,7 +37,7 @@ const Hero = ({ className, hero, locale }) => {
                   } h-full transition duration-300 scale-animation`}
                 >
                   <SanityImage
-                    className="h-full object-center object-cover"
+                    className="w-full object-center object-cover"
                     data={heroContent.image.asset}
                   />
                 </div>

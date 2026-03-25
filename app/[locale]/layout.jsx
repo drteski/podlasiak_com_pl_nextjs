@@ -20,7 +20,6 @@ export default function RootLayout({ children, params }) {
           src="https://cookiechimp.com/portal/r2at9qJ/vendors.js"
           strategy="afterInteractive"
         ></Script>
-        <div data-cookiechimp-vendor-list></div>
       </body>
       <Script
         src="https://cookiechimp.com/widget/r2at9qJ.js"
